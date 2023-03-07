@@ -1,4 +1,4 @@
-import NumberRangeSummarizer.NumberRangeSummarizerLauncher;
+import NumberRangeSummarizer.NumberRangeSummarizerImplementer;
 import org.junit.Test;
 
 import java.util.Collection;
@@ -10,7 +10,7 @@ public class NumberRangeSummarizerTest {
     @Test
     public void testForDuplicatesInCollectionMethod() {
         String InputValues = "1,1,2,2,3,6,7,8,8,9";
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
 
         Collection<Integer> ExpectedResults = new TreeSet<Integer>();
         ExpectedResults.add(1);
@@ -26,7 +26,7 @@ public class NumberRangeSummarizerTest {
     @Test
     public void testForSortingInCollectionMethod() {
         String InputValues = "9,2,5,4,1,6,7,10,3";
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
 
         Collection<Integer> ExpectedResults = new TreeSet<Integer>();
         ExpectedResults.add(1);
@@ -44,7 +44,7 @@ public class NumberRangeSummarizerTest {
     @Test(expected = NumberFormatException.class)
     public void testForWrongCharacterValueInsertion() {
         String InputValues = "1,2,c,v,r,5,#,";
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
 
         Collection<Integer> collect = numbers.collect(InputValues);
         assertEquals(collect, NumberFormatException.class);
@@ -52,7 +52,7 @@ public class NumberRangeSummarizerTest {
     @Test(expected = NumberFormatException.class)
     public void testForSpaceInBetweenValuesInsertion() {
         String InputValues = "1,2,3,4,6, 5";
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
         Collection<Integer> collect = numbers.collect(InputValues);
 
         assertEquals(collect, NumberFormatException.class);
@@ -61,7 +61,7 @@ public class NumberRangeSummarizerTest {
     public void testIfSummarizeCollectionValuesAreGrouped() {
         String InputValues = "1,2,4,5,6,18,19,30,31,40";
         String expectedResult = "1-2, 4-6, 18-19, 30-31, 40";
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
 
         assertEquals(numbers.summarizeCollection(numbers.collect(InputValues)), expectedResult);
     }
@@ -69,7 +69,7 @@ public class NumberRangeSummarizerTest {
     public void testIfUserInsertCommaAtTheEnd() {
         String InputValues = "1,2,3,5,6,7,8,";
         String expectedResults = "1-3, 5-8";
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
 
         String value = numbers.summarizeCollection(numbers.collect(InputValues));
         assertEquals(value, expectedResults);

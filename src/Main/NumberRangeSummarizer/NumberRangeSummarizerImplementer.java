@@ -4,12 +4,12 @@ import java.util.Collection;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class NumberRangeSummarizerLauncher implements NumberRangeSummarizer {
+public class NumberRangeSummarizerImplementer implements NumberRangeSummarizer {
     public static void main(String[] args) {
         Scanner myNumbers = new Scanner(System.in);
         System.out.println("Type your numbers and a comma after each number and press enter: ");
         String userInput = myNumbers.nextLine();
-        NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
+        NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
         System.out.println(numbers.summarizeCollection(numbers.collect(userInput)));
     }
 
