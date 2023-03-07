@@ -1,4 +1,5 @@
-import NumberRangeSummarizer.NumberRangeSummarizerImplementer;
+
+import numberrangesummarizer.NumberRangeSummarizerImplementer;
 import org.junit.Test;
 
 import java.util.Collection;

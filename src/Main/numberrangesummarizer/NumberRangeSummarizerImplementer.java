@@ -1,4 +1,4 @@
-package NumberRangeSummarizer;
+package numberrangesummarizer;
 
 import java.util.Collection;
 import java.util.Scanner;
