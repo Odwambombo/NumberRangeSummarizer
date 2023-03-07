@@ -31,6 +31,7 @@ public class NumberRangeSummarizerImplementer implements NumberRangeSummarizer {
 
     @Override
     public String summarizeCollection(Collection<Integer> input) {
+
         StringBuilder finalString = new StringBuilder();
         int[] inputValue = input.stream().mapToInt(i -> i).toArray();
 
@@ -39,6 +40,7 @@ public class NumberRangeSummarizerImplementer implements NumberRangeSummarizer {
         String temp = "" + inputValue[0];
         int endOfSequentialValues = inputValue[0];
 
+        // 1, 2,8,9
         for (int i = 0; i < inputValue.length - 1; i++) {
             if (inputValue[i + 1] == inputValue[i] + 1) {
                 if (count == 0) {

@@ -30,14 +30,14 @@ public class NumberRangeSummarizerTest {
 
         Collection<Integer> ExpectedResults = new TreeSet<Integer>();
         ExpectedResults.add(1);
-        ExpectedResults.add(2);
-        ExpectedResults.add(3);
         ExpectedResults.add(4);
+        ExpectedResults.add(3);
+        ExpectedResults.add(2);
         ExpectedResults.add(5);
         ExpectedResults.add(6);
-        ExpectedResults.add(7);
-        ExpectedResults.add(9);
         ExpectedResults.add(10);
+        ExpectedResults.add(9);
+        ExpectedResults.add(7);
 
         assertEquals(numbers.collect(InputValues), ExpectedResults);
     }
@@ -46,16 +46,14 @@ public class NumberRangeSummarizerTest {
         String InputValues = "1,2,c,v,r,5,#,";
         NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
 
-        Collection<Integer> collect = numbers.collect(InputValues);
-        assertEquals(collect, NumberFormatException.class);
+        assertEquals(numbers.collect(InputValues), NumberFormatException.class);
     }
     @Test(expected = NumberFormatException.class)
     public void testForSpaceInBetweenValuesInsertion() {
         String InputValues = "1,2,3,4,6, 5";
         NumberRangeSummarizerImplementer numbers = new NumberRangeSummarizerImplementer();
-        Collection<Integer> collect = numbers.collect(InputValues);
 
-        assertEquals(collect, NumberFormatException.class);
+        assertEquals(numbers.collect(InputValues), NumberFormatException.class);
     }
     @Test
     public void testIfSummarizeCollectionValuesAreGrouped() {
