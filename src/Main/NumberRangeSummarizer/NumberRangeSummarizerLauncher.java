@@ -1,7 +1,10 @@
-import java.util.*;
+package NumberRangeSummarizer;
+
+import java.util.Collection;
+import java.util.Scanner;
+import java.util.TreeSet;
 
 public class NumberRangeSummarizerLauncher implements NumberRangeSummarizer {
-
     public static void main(String[] args) {
         Scanner myNumbers = new Scanner(System.in);
         System.out.println("Type your numbers and a comma after each number and press enter: ");

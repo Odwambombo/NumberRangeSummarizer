@@ -1,3 +1,5 @@
+package NumberRangeSummarizer;
+
 import java.util.Collection;
 
 public interface NumberRangeSummarizer {

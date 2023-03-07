@@ -1,3 +1,4 @@
+import NumberRangeSummarizer.NumberRangeSummarizerLauncher;
 import org.junit.Test;
 
 import java.util.Collection;
@@ -22,7 +23,7 @@ public class NumberRangeSummarizerTest {
 
         assertEquals(numbers.collect(InputValues), ExpectedResults);
     }
-    @org.junit.Test
+    @Test
     public void testForSortingInCollectionMethod() {
         String InputValues = "9,2,5,4,1,6,7,10,3";
         NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
@@ -40,7 +41,7 @@ public class NumberRangeSummarizerTest {
 
         assertEquals(numbers.collect(InputValues), ExpectedResults);
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @Test(expected = NumberFormatException.class)
     public void testForWrongCharacterValueInsertion() {
         String InputValues = "1,2,c,v,r,5,#,";
         NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
@@ -48,7 +49,7 @@ public class NumberRangeSummarizerTest {
         Collection<Integer> collect = numbers.collect(InputValues);
         assertEquals(collect, NumberFormatException.class);
     }
-    @org.junit.Test(expected = NumberFormatException.class)
+    @Test(expected = NumberFormatException.class)
     public void testForSpaceInBetweenValuesInsertion() {
         String InputValues = "1,2,3,4,6, 5";
         NumberRangeSummarizerLauncher numbers = new NumberRangeSummarizerLauncher();
@@ -56,7 +57,7 @@ public class NumberRangeSummarizerTest {
 
         assertEquals(collect, NumberFormatException.class);
     }
-    @org.junit.Test
+    @Test
     public void testIfSummarizeCollectionValuesAreGrouped() {
         String InputValues = "1,2,4,5,6,18,19,30,31,40";
         String expectedResult = "1-2, 4-6, 18-19, 30-31, 40";
@@ -64,7 +65,7 @@ public class NumberRangeSummarizerTest {
 
         assertEquals(numbers.summarizeCollection(numbers.collect(InputValues)), expectedResult);
     }
-    @org.junit.Test
+    @Test
     public void testIfUserInsertCommaAtTheEnd() {
         String InputValues = "1,2,3,5,6,7,8,";
         String expectedResults = "1-3, 5-8";
