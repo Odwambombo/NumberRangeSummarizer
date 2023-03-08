@@ -18,8 +18,10 @@ public class NumberRangeSummarizerTest {
         ExpectedResults.add(2);
         ExpectedResults.add(3);
         ExpectedResults.add(6);
+        ExpectedResults.add(6);
         ExpectedResults.add(7);
         ExpectedResults.add(8);
+        ExpectedResults.add(9);
         ExpectedResults.add(9);
 
         assertEquals(numbers.collect(InputValues), ExpectedResults);

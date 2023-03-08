@@ -22,7 +22,7 @@ public class NumberRangeSummarizerImplementer implements NumberRangeSummarizer {
             try {
                 collection.add(Integer.parseInt(inputValue));
             } catch (NumberFormatException e) {
-                System.out.println("Please insert only Integer values and type comma with no spaces in between!");
+                System.out.println("Please insert only Integer values and type comma with no spaces or space in between!");
                 throw e;
             }
         }
